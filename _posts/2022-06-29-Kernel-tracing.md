@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "리눅스 커널 추적 및 분석"
-tags: [Linux, Kernet, tracing, uftrace]
+tags: [Linux, Kernel, tracing, uftrace]
 comments: true
 ---
 
