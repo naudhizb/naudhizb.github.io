@@ -109,6 +109,12 @@ comments: true
       <p>This is great isn't it?</p>
     </div>
 
+## 8. 각주
+
+각주 테스트[^1]
+
+[^1]: 테스트 각주입니다.
+
 --- 
 
 이 문서는 [한글 Lorem Ipsum](http://guny.kr/stuff/klorem/)으로 생성되었습니다.

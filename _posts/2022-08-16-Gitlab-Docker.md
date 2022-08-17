@@ -115,6 +115,8 @@ exit
 docker ps -a
 ```
 
+
+
 ## docker compose 설치 
 
 docker compose는 복수 개의 컨테이너 실행을 정의하기 위한 툴입니다. 
@@ -278,43 +280,42 @@ docker-compose up -d
 
 2. gitlab runner 콘솔 접근
 
-```bash
-docker-compose exec gitlab-runner bash
-```
+	```bash
+	docker-compose exec gitlab-runner bash
+	```
 
-또는
+	또는
 
-```bash
-docker exec -ti gitlab-runner bash
-```
+	```bash
+	docker exec -ti gitlab-runner bash
+	```
 
-로 콘솔에 접근 가능하다. 
+	로 콘솔에 접근 가능하다. 
 
 3. 러너 등록
 
-- gitlab-runner register 명령을 실행하고 지침에 따라 아래 항목을 입력한다.
+	- gitlab-runner register 명령을 실행하고 지침에 따라 아래 항목을 입력한다.
 
-	- Enter the GitLab instance URL : external_url을 입력
-	- Enter the registration token : Copy token 아이콘을 클릭하여 클립보드에 복사하여 입력
-	- Enter a description for the runner : 러너에 대한 설명 입력
-	- Enter tags for the runner : 공백
-	- Enter an executor : docker을 입력
-	- Enter the default Docker image : alpine:latest을 입력
+		- Enter the GitLab instance URL : external_url을 입력
+		- Enter the registration token : Copy token 아이콘을 클릭하여 클립보드에 복사하여 입력
+		- Enter a description for the runner : 러너에 대한 설명 입력
+		- Enter tags for the runner : 공백
+		- Enter an executor : docker을 입력
+		- Enter the default Docker image : alpine:latest을 입력
 	
-
 4. alpine 설치
 
-- exit를 입력하여 메인 콘솔로 복귀한 뒤
-- docker pull alpine을 입력하여 alpine을 설치한다. 
+	- exit를 입력하여 메인 콘솔로 복귀한 뒤
+	- docker pull alpine을 입력하여 alpine을 설치한다. 
 
 5. Runner 연동 확인
 
-Gitlab UI에서 새로고침을 하면 Runner가 등록되어있음을 확인할 수 있다. 
+	Gitlab UI에서 새로고침을 하면 Runner가 등록되어있음을 확인할 수 있다. 
 
 6. Gitlab Runner 설정
 
-2번에서 서설한 것과 같이 다시 gitlab-runner 컨테이너에 접근 한 뒤 config.toml을 변경한다. 
+	2번에서 서설한 것과 같이 다시 gitlab-runner 컨테이너에 접근 한 뒤 config.toml을 변경한다. 
 
-```
-[runners.docker] 섹션에서 privileged = true로 변경.
-```
+	```
+	[runners.docker] 섹션에서 privileged = true로 변경.
+	```
